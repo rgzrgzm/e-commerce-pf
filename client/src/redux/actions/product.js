@@ -4,15 +4,22 @@ import {
   GET_PRODUCTS_SUCCESS,
 } from "./actionTypes";
 
-export const getProducts = () => {
+export const getProducts = (search) => {
   return async (dispatch) => {
     dispatch(fetchProductsBegin());
+
     try {
-      const response = await fetch("http://localhost:3001/products");
+      const url = new URL("http://localhost:3001/products");
+      const params = new URLSearchParams(url.search);
+      if (search) {
+        const { name } = search;
+        params.set("name");
+      }
+      if (params) url.search = params;
+      const response = await fetch(url);
       const res = await handleErrors(response);
       const json = await res.json();
-      dispatch(fetchProductsSuccess(json));
-      return Promise.resolve();
+      return dispatch(fetchProductsSuccess(json));
     } catch (error) {
       return dispatch(fetchProductsFailure(error));
     }

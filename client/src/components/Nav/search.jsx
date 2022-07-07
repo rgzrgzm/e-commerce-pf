@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { getProducts } from "../../redux/actions/product";
 import style from "./nav.module.css";
 import { Liauto, Ulauto } from "./style";
 
 function Search({ data }) {
+  const dispatch = useDispatch();
   const [suggestions, setSuggestions] = useState([]); // igual que el filtered
   const [suggestionIndex, setSuggestionIndex] = useState(0);
   const [suggestionsActive, setSuggestionsActive] = useState(false); // showSuggestions
@@ -82,6 +85,11 @@ function Search({ data }) {
     );
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(getProducts({ name: e.target.value }));
+  };
+
   return (
     <div className={style.searchbar}>
       <div className={style.searchbar_wrapper}>
@@ -95,7 +103,7 @@ function Search({ data }) {
 
         <div className={style.searchbar_center}>
           <div className={style.searchbar_input_spacer}></div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
               className={style.searchbar_input}
