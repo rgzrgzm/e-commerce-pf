@@ -1,7 +1,9 @@
+import { Container } from "./styles";
+
 export default function Cart() {
   return (
-    <div style={{ paddingTop: "140px" }}>
+    <Container style={{ paddingTop: "140px" }}>
       <h1>Shopping cart</h1>
-    </div>
+    </Container>
   );
 }
