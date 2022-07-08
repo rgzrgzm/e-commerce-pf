@@ -16,9 +16,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import NoMatch from "./pages/NoMatch";
 import { getProducts } from "./redux/actions/product";
-import { useParams } from 'react-router-dom'
 
-function App(props) {
+function App() {
   const location = useLocation();
   const dispatch = useDispatch();
  
@@ -28,12 +27,12 @@ function App(props) {
   const paginateInfo = useSelector((state) => state.product.paginateInfo);
   const splitLocationName = location.pathname.split('/')
   console.log(splitLocationName)
-  if(splitLocationName[1] === ''){
+  if(splitLocationName[1] !== 'page'){
     useEffect(() => {
       dispatch(getProducts());
     }, []);
   }
-  else if(splitLocationName[1] === 'page'){
+  else{
     useEffect(() => {
       dispatch(getProducts(null, parseInt(splitLocationName[2])));
     }, []);
