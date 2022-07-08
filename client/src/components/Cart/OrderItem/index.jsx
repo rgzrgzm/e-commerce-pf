@@ -6,7 +6,7 @@ import {
   removePriceCart,
 } from "../../../redux/actions/cart";
 
-import { List, Img, Li } from "./styles";
+import { List, Img, Li , Text , Amount, Button , Div , CloseButton} from "./styles";
 
 export default function OrderItem({ item }) {
   const [price, setPrice] = useState(item.precio);
@@ -31,30 +31,32 @@ export default function OrderItem({ item }) {
     dispatch(removePriceCart(item.id));
   };
   return (
-    <List>
-      <Li>
-        <Img src={`${item.imagen}`} alt={`Imagen de ${item.nombre}`} />
-      </Li>
-      <Li>
-        <h3>{item.nombre}</h3>
-      </Li>
-      <Li>
-        <h5>{item.escripcion}</h5>
-      </Li>
-      <Li>
-        <h3>${item.precio}</h3>
-      </Li>
-      <Li>
-        <button onClick={decAmount}>-</button>
-        <p>{amount}</p>
-        <button onClick={incAmount}>+</button>
-      </Li>
-      <Li>
-        <h3>${price}</h3>
-      </Li>
-      <Li>
-        <h3 onClick={removeItem}>Remove</h3>
-      </Li>
-    </List>
+    <Div>
+      <CloseButton onClick={removeItem}>X</CloseButton>
+      <List>
+        <Li>
+          <Img src={`${item.imagen}`} alt={`Imagen de ${item.nombre}`} />
+        </Li>
+        <Li>
+          <Text>
+            <h3>{item.nombre}</h3>
+            <h5>{item.descripcion}</h5>
+          </Text>
+        </Li>
+        <Li>
+          <h3>${item.precio}</h3>
+        </Li>
+        <Li>
+          <Amount>
+            <Button onClick={decAmount}>-</Button>
+            <p>{amount}</p>
+            <Button onClick={incAmount}>+</Button>
+          </Amount>
+        </Li>
+        <Li>
+          <h3>${price}</h3>
+        </Li>
+      </List>
+    </Div>
   );
 }
