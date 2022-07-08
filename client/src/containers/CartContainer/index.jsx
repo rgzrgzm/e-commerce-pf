@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Header from "../../components/Cart/Header";
 import OrderList from "../../components/Cart/List";
 import Pricing from "../../components/Cart/Pricing";
-import { List, Li } from "./styles";
+import { List, Li , Error} from "./styles";
 
 export default function ShoppingCart() {
   const shoppingCart = useSelector((store) => store.cart.shoppingCart);
@@ -12,7 +12,7 @@ export default function ShoppingCart() {
       { shoppingCart && shoppingCart.length ? (
         <List>
           <Li>
-            <Header amount={shoppingCart.length} />
+            <Header cantidad={shoppingCart.length} />
           </Li>
           <Li>
             <OrderList shoppingCart={shoppingCart} />
@@ -22,7 +22,7 @@ export default function ShoppingCart() {
           </Li>
         </List>
       ) : (
-        <h1>No hay items en su carrito</h1>
+        <Error>No hay items en su carrito</Error>
       )}
     </div>
   );
