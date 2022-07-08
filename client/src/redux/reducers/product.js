@@ -11,6 +11,7 @@ import {
 const initialState = {
   allProducts: [],
   products: [],
+  paginateInfo: {},
   category: "",
   product: {},
   loading: false,
@@ -29,7 +30,8 @@ export default function productReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        products: action.payload.products,
+        products: action.payload.products.productos,
+        paginateInfo: action.payload.products.paginateInfo
       };
 
     case GET_PRODUCTS_FAIL:

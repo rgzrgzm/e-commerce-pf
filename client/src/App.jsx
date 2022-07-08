@@ -16,18 +16,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import NoMatch from "./pages/NoMatch";
 import { getProducts } from "./redux/actions/product";
+import { useParams } from 'react-router-dom'
 
-function App() {
+function App(props) {
   const location = useLocation();
   const dispatch = useDispatch();
-
+ 
   const error = useSelector((state) => state.product.error);
   const loading = useSelector((state) => state.product.loading);
   const products = useSelector((state) => state.product.products);
-  console.log(products);
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+  const paginateInfo = useSelector((state) => state.product.paginateInfo);
+  const splitLocationName = location.pathname.split('/')
+  console.log(splitLocationName)
+  if(splitLocationName[1] === ''){
+    useEffect(() => {
+      dispatch(getProducts());
+    }, []);
+  }
+  else if(splitLocationName[1] === 'page'){
+    useEffect(() => {
+      dispatch(getProducts(null, parseInt(splitLocationName[2])));
+    }, []);
+  }
 
   if (error) return <div>Error! {error.message}</div>;
   if (loading)
@@ -43,7 +53,8 @@ function App() {
       <NavBar products={products} />
       {/* {location.pathname !== "/" ? <NavBar /> : null} */}
       <Routes>
-        <Route exact path="/" element={<MainContainer products={products} />} />
+        <Route exact path="/" element={<MainContainer products={products} paginateInfo={paginateInfo} />} />
+        <Route exact path="/page/:page" element={<MainContainer products={products} paginateInfo={paginateInfo} />} />
         <Route path="/detail/:productId" element={<ProductDetail />} />
         <Route path="/admin/" element={<AdminHub />} />
         <Route path="/login/" element={<Login />} />

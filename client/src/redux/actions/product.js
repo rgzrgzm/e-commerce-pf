@@ -8,12 +8,12 @@ import {
   ORDER_BY_CATEGORY,
 } from "./actionTypes";
 
-export const getProducts = (search) => {
+export const getProducts = (search, page = 1) => {
   return async (dispatch) => {
     dispatch(fetchProductsBegin());
 
     try {
-      const url = new URL("http://localhost:3001/products");
+      const url = new URL("http://localhost:3001/products/" + page);
       const params = new URLSearchParams(url.search);
       let response = await fetch(url);
       if (search) {
@@ -26,7 +26,7 @@ export const getProducts = (search) => {
 
       const res = await handleErrors(response);
       const json = await res.json();
-      return dispatch(fetchProductsSuccess(json.productos));
+      return dispatch(fetchProductsSuccess(json));
     } catch (error) {
       return dispatch(fetchProductsFailure(error));
     }
