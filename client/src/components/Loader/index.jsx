@@ -1,14 +1,16 @@
 import React from "react";
-import { ContainerCradle, Dot } from "./style";
+import { ContainerCradle, Dot, FullContainer } from "./style";
 
 function Loading() {
   return (
-    <ContainerCradle>
-      <Dot />
-      <Dot />
-      <Dot />
-      <Dot />
-    </ContainerCradle>
+    <FullContainer>
+      <ContainerCradle>
+        <Dot />
+        <Dot />
+        <Dot />
+        <Dot />
+      </ContainerCradle>
+    </FullContainer>
   );
 }
 

@@ -32,7 +32,7 @@ function App() {
   if (error) return <div>Error! {error.message}</div>;
   if (loading)
     return (
-      <div className="App">
+      <div>
         <Loading />
       </div>
     );

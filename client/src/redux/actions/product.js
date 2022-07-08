@@ -11,13 +11,17 @@ export const getProducts = (search) => {
     try {
       const url = new URL("http://localhost:3001/products");
       const params = new URLSearchParams(url.search);
+      let response = await fetch(url);
       if (search) {
         const { name } = search;
-        params.set("name");
+        params.set("name", name);
+        if (params) url.search = params;
+      } else {
+        response = await fetch(url);
       }
-      if (params) url.search = params;
-      const response = await fetch(url);
+
       const res = await handleErrors(response);
+      console.log(res);
       const json = await res.json();
       return dispatch(fetchProductsSuccess(json));
     } catch (error) {
