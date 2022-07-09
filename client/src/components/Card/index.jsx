@@ -45,15 +45,18 @@ const Card = ({ id, nombre, imagen, descripcion, precio, talles }) => {
     size.current = event.target.value
   }
 
+  const toDetail = ()=>{
+    navigate(`/detail/${id}`)
+  }
 
   const formatPrice = new Intl.NumberFormat("es-AR").format(precio);
   return (
     <DIV>
       <ContainerImage>
-        <Image src={imagen} />
+        <Image src={imagen} onClick={toDetail} />
       </ContainerImage>
       <InfoContainer>
-        <H2 onClick={() => navigate(`/detail/${id}`)}>{nombre}</H2>
+        <H2 onClick={toDetail}>{nombre}</H2>
         <div>
           <PriceSize>
             <Select onChange={handleChange}>
