@@ -4,7 +4,7 @@ import { Li, List , Ord , Div } from "./styles"
 
 
 
-export default function OrderList ({shoppingCart,total,setTotal}){    
+export default function OrderList ({ shoppingCart , setAlert }){    
     return(
         <Div>
             <Div>
@@ -18,7 +18,7 @@ export default function OrderList ({shoppingCart,total,setTotal}){
             </Div>
             <Ord>
                 {
-                    shoppingCart.map(item=><OrderItem item={item}/>            
+                    shoppingCart.map(item=><OrderItem  setAlert={setAlert} item={item}/>            
                     )
                 }
             </Ord>

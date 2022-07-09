@@ -7,6 +7,7 @@ import { List, Li , Error} from "./styles";
 
 export default function ShoppingCart() {
   const shoppingCart = useSelector((store) => store.cart.shoppingCart);
+  const [alert,setAlert] = useState(1)
   return (
     <div>
       { shoppingCart && shoppingCart.length ? (
@@ -15,10 +16,10 @@ export default function ShoppingCart() {
             <Header cantidad={shoppingCart.length} />
           </Li>
           <Li>
-            <OrderList shoppingCart={shoppingCart} />
+            <OrderList shoppingCart={shoppingCart} setAlert={setAlert} />
           </Li>
           <Li>
-            <Pricing />
+            <Pricing alert={alert}/>
           </Li>
         </List>
       ) : (
