@@ -6,6 +6,7 @@ import {
   GET_PRODUCT_FAIL,
   GET_PRODUCT_SUCCESS,
   ORDER_BY_CATEGORY,
+  ORDER_BY
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -26,11 +27,12 @@ export default function productReducer(state = initialState, action) {
         error: null,
       };
     case GET_PRODUCTS_SUCCESS:
+      // let full = state.products; // se se quiere un estado anterior
       return {
         ...state,
         loading: false,
         products: action.payload.products,
-        allProducts: action.payload.products
+        allProducts: action.payload.products,
       };
 
     case GET_PRODUCTS_FAIL:
@@ -42,12 +44,50 @@ export default function productReducer(state = initialState, action) {
       };
     case ORDER_BY_CATEGORY:
       const payload = action.payload;
+      if(payload === "Todos") return {...state, products: [...state.allProducts]};
       return {
         ...state,
         products: [...state.allProducts].filter(
           (product) => product.categorium.nombre === payload
         ),
       };
+    case ORDER_BY:
+      if(action.payload === 'A-Z'){
+        return {
+          ...state,
+          products: [...state.products].sort((a, b) => {
+            return (a.nombre.toLowerCase() > b.nombre.toLowerCase() ? 1 : -1 )
+          })
+        }
+      }
+      if(action.payload === 'Z-A'){
+        return {
+          ...state,
+          products: [...state.products].sort((a, b) => {
+            return (a.nombre.toLowerCase() < b.nombre.toLowerCase() ? 1 : -1 )
+          })
+        }
+      }
+      if(action.payload === 'MayorMenor'){
+        return {
+          ...state,
+          products: [...state.products].sort((a, b) => {
+            let priceA = a.precio
+            let priceB = b.precio
+            return priceA < priceB ? 1 : -1
+          })
+        }
+      }
+      if(action.payload === 'MenorMayor'){
+        return {
+          ...state,
+          products: [...state.products].sort((a, b) => {
+            let priceA = a.precio
+            let priceB = b.precio
+            return priceA > priceB ? 1 : -1
+          })
+        }
+      }
     case GET_PRODUCT_BEGIN:
       return {
         ...state,
@@ -67,6 +107,10 @@ export default function productReducer(state = initialState, action) {
         error: action.payload.error,
         product: {},
       };
+    case 'POST_PRODUCT':
+      return {
+        ...state,
+      }
     default:
       return state;
   }

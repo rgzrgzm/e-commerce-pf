@@ -9,12 +9,16 @@ import {
 import { List, Img, Li , Text , Amount, Button , Div , CloseButton} from "./styles";
 
 export default function OrderItem({ item , setAlert}) {
-  const [priceCart,setPriceCart] = useState({cantidad: item.cantidad, subtotal:(item.precio*item.cantidad)})
+  const [priceCart,setPriceCart] = useState({
+    cantidad: item.cantidad,
+    subtotal:(item.precio*item.cantidad)
+  })
 
   const store = useSelector(state=>state.cart.priceCart)
   const dispatch = useDispatch();
 
   useEffect(() => {
+    //envia modificacion de precios al carrito y alerta para el total
     dispatch(addPriceCart(priceCart.subtotal, item.id));
     setAlert(alert=>alert+1)
   }, [priceCart , store]);

@@ -1,8 +1,9 @@
-
 import OrderItem from "../OrderItem"
-import { Li, List , Ord , Div } from "./styles"
-
-
+import {
+Li,
+List,
+Ord,
+Div} from "./styles"
 
 export default function OrderList ({ shoppingCart , setAlert }){    
     return(

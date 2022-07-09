@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   GET_PRODUCTS_BEGIN,
   GET_PRODUCTS_FAIL,
@@ -6,24 +7,21 @@ import {
   GET_PRODUCT_FAIL,
   GET_PRODUCT_SUCCESS,
   ORDER_BY_CATEGORY,
+  ORDER_BY
 } from "./actionTypes";
 
 export const getProducts = (search) => {
   return async (dispatch) => {
     dispatch(fetchProductsBegin());
-
     try {
       const url = new URL("http://localhost:3001/products");
-      const params = new URLSearchParams(url.search);
-      let response = await fetch(url);
       if (search) {
+        const params = new URLSearchParams(url.search);
         const { name } = search;
         params.set("name", name);
         if (params) url.search = params;
-      } else {
-        response = await fetch(url);
       }
-
+      const response = await fetch(url);
       const res = await handleErrors(response);
       const json = await res.json();
       return dispatch(fetchProductsSuccess(json.productos));
@@ -60,6 +58,11 @@ export const orderByCategoryName = (category) => ({
   payload: category,
 });
 
+export const orderBy = (value) => ({
+    type: ORDER_BY,
+    payload: value
+})
+
 export const getProduct = (productId) => {
   return async function (dispatch) {
     try {
@@ -88,3 +91,11 @@ export const fetchProductFailure = (error) => ({
   type: GET_PRODUCT_FAIL,
   payload: { error },
 });
+
+export const postProduct = (payload) => {
+  return async function(){
+      console.log(payload)
+      var json = await axios.post("http://localhost:3001/create/product/",payload)
+      return json;
+  }
+};
