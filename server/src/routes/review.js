@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { Producto } = require("../db.js");
+const { Producto, Rating } = require("../db.js");
 const router = Router();
 
 router.get("/product/:productId", async (req, res) => {
@@ -9,14 +9,21 @@ router.get("/product/:productId", async (req, res) => {
 
   //Si no me pasan un número, error.
   if (!parsedId && parsedId < 1)
-    return res.status(400).send({ Error: "El id debe ser un número entero positivo mayor a 0." });
+    return res
+      .status(400)
+      .send({ Error: "El id debe ser un número entero positivo mayor a 0." });
 
-      //Busco las reviews del producto que me pasen.
-    const producto = await Producto.findByPk(parsedId);
-    
-    if(!producto) return res.status(404).send({Error: "Producto no encontrado."})
+  //Busco las reviews del producto que me pasen.
+  const {count, rows} = await Rating.findAndCountAll({
+    where: {
+        productoId: parsedId
+    }
+  });
 
-    res.send(producto)
+  return res.send({
+    count: count,
+    reviews: rows
+  });
 });
 
 router.post("/:productId", async (req, res) => {
@@ -31,15 +38,15 @@ router.post("/:productId", async (req, res) => {
 
   //Si no me pasan un número, error.
   if (!parsedId && parsedId < 1)
-    return res.status(400).send({ Error: "El id debe ser un número entero positivo mayor a 0." });
+    return res
+      .status(400)
+      .send({ Error: "El id debe ser un número entero positivo mayor a 0." });
 
   //Si no me traen lo requerido o el puntaje no es un número o si el número no es entre 1 y 5, devuelvo un error.
   if (!puntaje || puntaje < 1 || puntaje > 5 || !titulo || !comentario)
-    return res
-      .status(400)
-      .send({
-        Error: "Faltan datos. El puntaje debe ser un número del 1 al 5.",
-      });
+    return res.status(400).send({
+      Error: "Faltan datos. El puntaje debe ser un número del 1 al 5.",
+    });
 
   //Busco el producto segun el id que me pasen
   const producto = await Producto.findByPk(parsedId);
