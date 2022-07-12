@@ -19,6 +19,7 @@ const cargarProductDbRouter = require('./product-DB');
 const cargarUserDbRouter = require('./user-DB');
 const getCategories = require("./getCategories");
 const getTalles = require("./getTalles");
+const reviewRouter = require('./review')
 
 
 // Configurar los routers
@@ -39,5 +40,6 @@ router.use('/admin/crearorigen', cargarProductDbRouter);
 router.use('/admin/crearusuarios', cargarUserDbRouter);
 router.use("/categories", getCategories);
 router.use("/talles", getTalles)
+router.use("/review", reviewRouter)
 
 module.exports = router;

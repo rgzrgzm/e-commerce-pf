@@ -51,6 +51,9 @@ Usuario.belongsToMany(ProductosFav, {through: "producto_fav_usuario"});
 Producto.belongsToMany(Talle, {through: Producto_talle})
 Talle.belongsToMany(Producto, {through: Producto_talle})
 
+Producto.hasMany(Rating)
+Rating.belongsTo(Producto)
+
 
 
 module.exports = {
