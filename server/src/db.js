@@ -54,6 +54,9 @@ Talle.belongsToMany(Producto, {through: Producto_talle})
 Producto.hasMany(Rating)
 Rating.belongsTo(Producto)
 
+Usuario.hasMany(Rating)
+Rating.belongsTo(Usuario)
+
 
 
 module.exports = {
