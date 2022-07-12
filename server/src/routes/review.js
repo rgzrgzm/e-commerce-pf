@@ -20,6 +20,7 @@ router.get("/product/:productId", async (req, res) => {
     }
   });
 
+  //Mando la cantidad de reviews con un array de reviews
   return res.send({
     count: count,
     reviews: rows
