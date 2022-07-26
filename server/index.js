@@ -132,13 +132,13 @@ conn.sync({ force: true }).then(() => {
         });
 
         //Agarro un user random de la db y le asigno el pedido
-        const randomUser = await Usuario.findOne({
-          where: {
-            id: users[Math.floor(Math.random() * users.length)],
-          },
-        });
+        // const randomUser = await Usuario.findOne({
+        //   where: {
+        //     id: users[Math.floor(Math.random() * users.length)],
+        //   },
+        // });
 
-        await randomUser.addPedido(pedido);
+        // await randomUser.addPedido(pedido);
 
         //Agarro un user random de la db y le asigno el pedido
         const david = await Usuario.findOne({
