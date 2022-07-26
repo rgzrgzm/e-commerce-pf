@@ -1,279 +1,279 @@
 [
   {
-    "fecha": "03-12-2018",
+    "fecha": "2018-12-03",
     "pago_total": 360,
     "direccion_de_envio": { "direccion": "Pasaje privado 123", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "23-07-2018",
+    "fecha": "2018-07-23",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Pirulo 6123", "CP": 4005 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "11-03-2019",
+    "fecha": "2019-03-11",
     "pago_total": 2310,
     "direccion_de_envio": { "direccion": "San Martin 129", "CP": 4002 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "28-03-2019",
+    "fecha": "2019-03-28",
     "pago_total": 3210,
     "direccion_de_envio": { "direccion": "Los cocos 1523", "CP": 4008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "14-04-2020",
+    "fecha": "2020-04-14",
     "pago_total": 1320,
     "direccion_de_envio": { "direccion": "Gatowas 823", "CP": 4009 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "11-02-2020",
+    "fecha": "2020-02-11",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Pingu 5223", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "05-07-2018",
+    "fecha": "2018-07-05",
     "pago_total": 1234,
     "direccion_de_envio": { "direccion": "Jacksul 9123", "CP": 4005 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "09-11-2021",
+    "fecha": "2021-11-09",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Wandusk 1293", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "10-10-2018",
+    "fecha": "2018-10-10",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Pedro 1523", "CP": 4008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "09-09-2019",
+    "fecha": "2019-09-19",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Grande 1023", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "01-02-2018",
+    "fecha": "2018-02-01",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Viscarrondo 1913", "CP": 8008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "02-01-2018",
+    "fecha": "2018-01-02",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Siempre Viva 123", "CP": 4008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "08-03-2018",
+    "fecha": "2018-03-08",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Teclak 8745", "CP": 3008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "12-04-2018",
+    "fecha": "2018-04-12",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Jackin 2356", "CP": 4008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "16-05-2018",
+    "fecha": "2018-05-16",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Auro 2222", "CP": 4008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "22-06-2018",
+    "fecha": "2018-06-22",
     "pago_total": 1230,
     "direccion_de_envio": { "direccion": "Av. Italia 6910", "CP": 4008 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "31-07-2019",
+    "fecha": "2019-07-31",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Seco 1246", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "09-08-2019",
+    "fecha": "2019-08-09",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Martinelli 9812", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "15-09-2019",
+    "fecha": "2019-09-15",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Sardina 1208", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "27-10-2019",
+    "fecha": "2019-10-17",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Mayor 461", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "01-11-2019",
+    "fecha": "2019-11-01",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Negro 8856", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "11-12-2019",
+    "fecha": "2019-12-11",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Ventanal 9863", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "07-01-2019",
+    "fecha": "2019-01-07",
     "pago_total": 1803,
     "direccion_de_envio": { "direccion": "Av. Rio Menor 12", "CP": 4000 },
     "estado": "Aprobado",
     "idProductos": [1, 91, 3]
   },
   {
-    "fecha": "01-01-2020",
+    "fecha": "2020-01-01",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Pingu 5223", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "05-02-2020",
+    "fecha": "2020-02-05",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Sarandi 782", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "09-03-2020",
+    "fecha": "2020-03-09",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Maipu 147", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "15-04-2020",
+    "fecha": "2020-04-15",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Eden 101", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "22-05-2020",
+    "fecha": "2020-05-22",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Sarmiento 700", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "11-06-2020",
+    "fecha": "2020-06-11",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Martinez 6578", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "29-07-2020",
+    "fecha": "2020-07-29",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Sacachismpa 7895", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "23-08-2020",
+    "fecha": "2020-08-23",
     "pago_total": 5123,
     "direccion_de_envio": { "direccion": "Formosa 2243", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "24-12-2021",
+    "fecha": "2020-12-24",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Wandusk 1293", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "24-12-2021",
+    "fecha": "2021-12-24",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Betown 7845", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "24-12-2021",
+    "fecha": "2021-12-24",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Maruca 6340", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "31-12-2021",
+    "fecha": "2021-12-31",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Manzanelli 1267", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "31-12-2021",
+    "fecha": "2021-12-31",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Lapadula 36", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "05-06-2021",
+    "fecha": "2021-06-05",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Gatoradin 98", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "09-09-2021",
+    "fecha": "2021-09-09",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Adaptalomn 123", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "28-07-2021",
+    "fecha": "2021-07-28",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Papelon 1", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
   {
-    "fecha": "25-05-2021",
+    "fecha": "2021-05-25",
     "pago_total": 1235,
     "direccion_de_envio": { "direccion": "Patruski 2525", "CP": 4006 },
     "estado": "Aprobado",
