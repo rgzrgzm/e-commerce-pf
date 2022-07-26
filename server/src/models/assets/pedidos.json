@@ -274,7 +274,7 @@
   },
   {
     "fecha": "2021-05-25",
-    "pago_total": 1235,
+    "pago_total": 1235, 
     "direccion_de_envio": { "direccion": "Patruski 2525", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
