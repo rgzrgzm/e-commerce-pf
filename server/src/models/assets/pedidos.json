@@ -163,7 +163,7 @@
   {
     "fecha": "2020-01-01",
     "pago_total": 5123,
-    "direccion_de_envio": { "direccion": "Pingu 5223", "CP": 4001 },
+    "direccion_de_envio": { "direccion": "Sardina bis 1294", "CP": 4001 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
@@ -219,7 +219,7 @@
   {
     "fecha": "2020-12-24",
     "pago_total": 1235,
-    "direccion_de_envio": { "direccion": "Wandusk 1293", "CP": 4006 },
+    "direccion_de_envio": { "direccion": "Wanduskilu 1193", "CP": 4006 },
     "estado": "Aprobado",
     "idProductos": [1, 2, 3]
   },
