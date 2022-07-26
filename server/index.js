@@ -139,7 +139,7 @@ conn.sync({ force: true }).then(() => {
         // });
 
         // await randomUser.addPedido(pedido);
-
+          
         //Agarro un user random de la db y le asigno el pedido
         const david = await Usuario.findOne({
           where: {
