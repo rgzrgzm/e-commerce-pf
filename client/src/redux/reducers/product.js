@@ -23,7 +23,8 @@ const initialState = {
   loading: false,
   error: null,
   allCategories: [],
-  allTalles: []
+  allTalles: [],
+  productosFiltrados: []
 };
 
 export default function productReducer(state = initialState, action) {

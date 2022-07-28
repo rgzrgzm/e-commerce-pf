@@ -3,14 +3,17 @@ import { getPedidos, updateEstadoPedido, filterPedidos } from '../../redux/actio
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import ModalDetalle from '../../components/ModalDetalle/ModalDetalle';
 
 export default function Sales() {
   const dispatch = useDispatch();
+  const [modal, setModal] = useState(false)
+  const [detalles, setDetalles] = useState({})
   const [estado, setEstado] = useState("")
   const [search, setSearch] = useState("")
 
   const pedidosFiltrados = useSelector((state) => state.checkout.pedidosFiltrados);
-  // console.log(pedidosFiltrados)
+  console.log(pedidosFiltrados)
 
   useEffect(() => {
     dispatch(getPedidos());
@@ -50,6 +53,11 @@ export default function Sales() {
     console.log(estado)
   }
 
+  function detalle(datos) {
+    setDetalles(datos)   
+    setModal(!modal)
+  }
+
   function handleSelect(e){
     setEstado(
         e.target.value
@@ -62,37 +70,49 @@ export default function Sales() {
       name: 'Fecha',
       selector: row => `${row.fecha.substring(0, 10)}`,
       sortable: true,
-      grow: 0.7,
+      grow: 0.6,
     },
     {
-      name: 'Monto',
+      name: 'Id',
+      selector: row => `${row.id}`,
+      sortable: true,
+      grow: 0.1
+    },
+    {
+      name: 'Monto', 
       selector: row => `${row.pago_total}`,
       sortable: true,
-      grow: 0.7,
+      grow: 0.6,
     },
     {
       name: 'Direccion',
       selector: row => `${row.direccion_de_envio.direccion}`,
       sortable: true,
-      grow: 0.8,
+      grow: 1,
     },
     {
       name: 'CP',
       selector: row => `${row.direccion_de_envio.CP}`,
       sortable: true,
-      grow: 0.7,
+      grow: 0.4,
     },
     {
       name: 'Productos',
-      selector: row => `${row.productos[0].nombre}`,
+      selector: row => `${row.productos[0].nombre}`, 
       sortable: true,
-      grow: 1.8
+      grow: 1.6
+    },
+    {
+      name: 'Detalle',
+      selector: row => <button onClick={() => detalle(row.productos)} className='user detalle'>+</button>, 
+      sortable: true,
+      grow: 0.6
     },
     {
       name: 'Cantidad',
       selector: row => `${row.productos[0].compra.cantidad}`,
       sortable: true,
-      grow: 0.6,
+      grow: 0.7
     },
     {
       name: 'Estado',
@@ -122,7 +142,7 @@ export default function Sales() {
        <option value={"En Poder Del Correo"}>En Poder Del Correo</option>
        <option value={"Entregado"}>Entregado</option>
       </select>,
-      sortable: true
+      sortable: true,
     },
   ]
 
@@ -154,6 +174,9 @@ export default function Sales() {
     selectAllRowsItem: true,
     selectAllRowsItemText: 'Todos'
   }
+
+  const header = modal === false ? true : false;
+
   return (
     <div>
       <div className='barraBusqueda'>
@@ -180,9 +203,13 @@ export default function Sales() {
         title="Pedidos"
         pagination
         paginationComponentOptions={paginacionOpciones}
-        fixedHeader
+        fixedHeader={header}
         fixedHeaderScrollHeight="600px"
       />
+      {modal && (<ModalDetalle
+        cambiarEstado={setModal} datos={detalles}
+        />
+        )}
     </div>
   )
 }

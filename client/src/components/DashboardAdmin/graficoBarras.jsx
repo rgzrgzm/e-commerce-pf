@@ -74,7 +74,7 @@ export default function BarChart() {
     return (
         <GraficosBarras>
             <h1>Usuarios</h1>
-            <Bar data={data} options={options} width={385} height={520}/>
+            <Bar data={data} options={options} width={385} height={563}/>
         </GraficosBarras>
     );
 }
