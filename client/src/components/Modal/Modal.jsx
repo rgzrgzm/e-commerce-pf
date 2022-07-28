@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories, getTalles, updateProduct, getProduct } from "../../redux/actions/product"
+import { getCategories, getTalles, updateProduct, getProducts } from "../../redux/actions/product"
 import { useNavigate } from 'react-router-dom'; 
 
 import './Modal.css'
@@ -50,6 +50,9 @@ export default function Modal({ cambiarEstado, submit, datos }) {
         }
         dispatch(updateProduct(producto))
         // alert("Producto Editado !")
+        setTimeout(()=>{
+            dispatch(getProducts())
+          },1000)
         toast.success('Editado')
         cambiarEstado(false)
     }

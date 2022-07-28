@@ -30,6 +30,13 @@
     background-color: #1666cf;
 }
 
+.detalle {
+    width: 35px;
+    height: 36px;
+    font-size: 20px;
+    border-radius: 7px;
+}
+
 .textField {
     height: 32px;
     width: 200px;

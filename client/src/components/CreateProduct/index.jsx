@@ -1,6 +1,6 @@
 import Form from './form';
 import { Main } from "../../containers/MainContainer/styles";
-import { postProduct } from '../../redux/actions/product';
+import { postProduct, getProducts } from '../../redux/actions/product';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
@@ -11,6 +11,9 @@ export default function CreateProduct () {
         dispatch(postProduct(product));
         toast.success("Producto Creado !");
         // console.log(product);
+        setTimeout(()=>{
+            dispatch(getProducts())
+          },1000)
     }
 
     return (
