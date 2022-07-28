@@ -23,7 +23,7 @@ export default function Modal({ cambiarEstado, submit, datos }) {
         cantTalles: datos.talles.map(t => t.talle)
     })
     const [sinTalle, setSinTalle] = useState(false);
-
+    const [imageChange,setImageChange] = useState(false)
 
     // console.log(form)
 
@@ -38,15 +38,30 @@ export default function Modal({ cambiarEstado, submit, datos }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const producto = {
-            id: datos.id,
-            nombre: form.nombre,
-            precio: form.precio,
-            descripcion: form.descripcion,
-            imagen: form.imagen,
-            talle: form.cantTalles,
-            stock: form.stock,
-            categoria: [form.categoria]
+        let producto = {}
+        if(imageChange){
+            producto = {
+                id: datos.id,
+                nombre: form.nombre,
+                precio: form.precio,
+                descripcion: form.descripcion,
+                imagen: form.imagen,
+                talle: form.cantTalles,
+                stock: form.stock,
+                categoria: [form.categoria]
+            }
+
+        }else{
+            producto = {
+                id: datos.id,
+                nombre: form.nombre,
+                precio: form.precio,
+                descripcion: form.descripcion,
+                imagen: datos.imagen,
+                talle: form.cantTalles,
+                stock: form.stock,
+                categoria: [form.categoria]
+            }
         }
         dispatch(updateProduct(producto))
         // alert("Producto Editado !")
@@ -132,13 +147,14 @@ export default function Modal({ cambiarEstado, submit, datos }) {
                             />
 
                             <label htmlFor="imagen">Imagen:</label>
-                            <input
+                            {imageChange ? ( <input
                                 type="file"
                                 id="imagen"
                                 name="imagen"
                                 // value={form.imagen}
                                 onChange={e => setForm({ ...form, [e.target.name]: e.target.value })}
-                            />
+                            />) : (<button onClick={()=>{setImageChange(true)}}>Cambiar imagen</button>)}
+                           
 
                             <label>Talle</label>
                             <div id="checkContainer">
