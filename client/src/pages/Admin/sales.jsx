@@ -36,7 +36,7 @@ export default function Sales() {
   }
 
   function modificar(id, estado,row){
-    if (estado === "" || estado === "seleccione"){toast.info(`Debe selecccionar estado`)
+    if (estado === "" || estado === "seleccione"){toast.error(`Debe selecccionar estado`)
   return
   }
     dispatch(updateEstadoPedido({id, estado: estado}))
@@ -102,7 +102,7 @@ export default function Sales() {
     },
     {
       name: 'Modificar',
-      selector: row => <button className='user' onClick={() => modificar(row.id, estado)}>Editar</button>,
+      selector: row => <button className='user' onClick={() => modificar(row.id, estado,row)}>Editar</button>,
       sortable: true,
       grow: 0.6,
     },

@@ -60,7 +60,15 @@ export default function cartReducer(state = initialState, action) {
           state.shoppingCart[i].talle === action.payload.size
         )
           state.shoppingCart.splice(i, 1);
-      }
+        }
+        if (state.order.length){
+          for (let i=0;i<state.order.length;i++){
+            if (
+              state.order[i].id===action.payload.id &&
+              state.order[i].talle===action.payload.size
+            ) state.order.splice(i,1)
+          }  
+        }
       return {
         ...state,
       };
