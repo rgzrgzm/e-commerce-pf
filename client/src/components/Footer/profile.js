@@ -45,6 +45,6 @@ export const nosotros = [
     usuario: "Mario R.",
     linkedIn: "https://www.linkedin.com/in/rgzrgzm/",
     imagen:
-      "https://media-exp1.licdn.com/dms/image/D5635AQGKp4GWKrapmg/profile-framedphoto-shrink_800_800/0/1646878346372?e=1659459600&v=beta&t=2rWOYnV0VDXr558NwHTVzkgMaLAMMyoDMZITFVRbh3c",
+      "https://avatars.githubusercontent.com/u/87833482?v=4",
   },
 ];
